@@ -40,3 +40,4 @@ POST1
     ${name}    Get Value From Json    ${response.json()}    $..name
     ${photoUrl}    Get Value From Json    ${response.json()}    $..photoUrls
     Log To Console    Trying to commit from feature branch supraja045-patch-1
+    Log    adding details supraja045-patch-1 branch ${/}
