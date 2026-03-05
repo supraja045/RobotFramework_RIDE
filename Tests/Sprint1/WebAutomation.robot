@@ -10,6 +10,7 @@ Resource          ../SupportFiles/SupportSteps.robot
 
 *** Test Cases ***
 Title
+    [Tags]    title
     Open Browser    https://www.leafground.com/dashboard.xhtml    chrome
     Wait Until Page Contains    Dashboard
     Title Should Be    Dashboard
