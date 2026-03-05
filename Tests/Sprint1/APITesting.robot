@@ -5,12 +5,15 @@ ${baseUrl}        https://petstore.swagger.io/
 Library           RequestsLibrary
 Library           FakerLibrary
 Library           JSONLibrary
+Library           OperatingSystem
 
 *** Test Cases ***
 GET
     [Tags]    get
     ${headers}    Create Dictionary    content-type=application/json
-    Create Session    api1    ${baseUrl}    headers=${headers}
+    ${BASE_URL}    Get Environment Variable    BASE_URL
+    Log    ${BASE_URL}
+    Create Session    api1    \    headers=${headers}
     ${response}    GET On Session    api1    /v2/pet/170190
     ${id}    JSONLibrary.Get Value From Json    ${response.json()}    $..id
     Should Be Equal As Strings    ${id}[0]    170190
