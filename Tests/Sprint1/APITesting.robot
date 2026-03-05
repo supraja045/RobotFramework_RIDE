@@ -16,6 +16,7 @@ GET
     Should Be Equal As Strings    ${id}[0]    765109
 
 POST
+    [Tags]    post
     ${headers}    Create Dictionary    content-type=application/json
     Create Session    api1    ${baseUrl}
     #    ${body}    Set Variable    {"id": 180892, "name": "doggie", "status": "available"}
