@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.12.2 on win32)" generated="2025-08-06T12:45:39.687345" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFramework RIDE" source="D:\Professional\RobotFramework_RIDE">
+<suite id="s1-s1" name="Tests" source="D:\Professional\RobotFramework_RIDE\Tests">
+<suite id="s1-s1-s1" name="Sprint1" source="D:\Professional\RobotFramework_RIDE\Tests\Sprint1">
+<suite id="s1-s1-s1-s1" name="MyFirstRFProject" source="D:\Professional\RobotFramework_RIDE\Tests\Sprint1\MyFirstRFProject.robot">
+<test id="s1-s1-s1-s1-t1" name="Verify the Alert box in the Dashboard page" line="18">
+<kw name="Given I open the browser to the Leaf ground page" owner="SupportSteps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:40.644827" level="INFO">Opening browser 'chrome' to base url 'https://www.leafground.com/dashboard.xhtml'.</msg>
+<arg>https://www.leafground.com/dashboard.xhtml</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-06T12:45:40.644827" elapsed="2.040387"/>
+</kw>
+<status status="PASS" start="2025-08-06T12:45:40.633985" elapsed="2.051229"/>
+</kw>
+<kw name="When I click on the Browser button" owner="SupportSteps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@class='pi pi-globe layout-menuitem-icon']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T12:45:42.687885" elapsed="1.438914"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:44.130482" level="INFO">Clicking element '//*[@class='pi pi-globe layout-menuitem-icon']'.</msg>
+<arg>//*[@class='pi pi-globe layout-menuitem-icon']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T12:45:44.130482" elapsed="0.110233"/>
+</kw>
+<status status="PASS" start="2025-08-06T12:45:42.685214" elapsed="1.555501"/>
+</kw>
+<kw name="And I click on the Alert box section" owner="SupportSteps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@class="pi pi-fw pi-clone layout-menuitem-icon"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T12:45:44.242645" elapsed="0.019571"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:44.263456" level="INFO">Clicking element '//*[@class="pi pi-fw pi-clone layout-menuitem-icon"]'.</msg>
+<arg>//*[@class="pi pi-fw pi-clone layout-menuitem-icon"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T12:45:44.263456" elapsed="0.865263"/>
+</kw>
+<status status="PASS" start="2025-08-06T12:45:44.240715" elapsed="0.888004"/>
+</kw>
+<kw name="Then I should see the simple alert message &quot;I am a simple alert&quot;" owner="SupportSteps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="simple_result"]/preceding::button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.130734" elapsed="0.019520"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:45.153340" level="INFO">Clicking element '//*[@id="simple_result"]/preceding::button'.</msg>
+<arg>//*[@id="simple_result"]/preceding::button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.153340" elapsed="0.056819"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:45.213345" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.213345" elapsed="0.005374"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:45.259270" level="INFO">${simpleAlertOp} = You have successfully clicked an alert</msg>
+<var>${simpleAlertOp}</var>
+<arg>//*[@id="simple_result"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.218719" elapsed="0.040551"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${simpleAlertOp}</arg>
+<arg>You have successfully clicked an alert</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.259270" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:45.477330" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.259270" elapsed="0.218060"/>
+</kw>
+<status status="PASS" start="2025-08-06T12:45:45.128719" elapsed="0.348611"/>
+</kw>
+<kw name="And I should see the alert message &quot;You have successfully clicked an alert&quot;" owner="SupportSteps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="j_idt88:j_idt93"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.479335" elapsed="0.034620"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:45.515013" level="INFO">Clicking element '//*[@id="j_idt88:j_idt93"]'.</msg>
+<arg>//*[@id="j_idt88:j_idt93"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.515013" elapsed="0.050910"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:45.566477" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.566477" elapsed="0.003149"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:45.609744" level="INFO">${confirmAlertOp} = User Clicked : OK</msg>
+<var>${confirmAlertOp}</var>
+<arg>//*[@id="result"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.569626" elapsed="0.040118"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${confirmAlertOp}</arg>
+<arg>User Clicked : OK</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.611027" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-08-06T12:45:45.814092" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.611027" elapsed="0.203065"/>
+</kw>
+<status status="PASS" start="2025-08-06T12:45:45.477330" elapsed="0.336762"/>
+</kw>
+<status status="PASS" start="2025-08-06T12:45:40.633985" elapsed="5.180107"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-08-06T12:45:45.814092" elapsed="2.226292"/>
+</kw>
+<status status="PASS" start="2025-08-06T12:45:39.749896" elapsed="8.291842"/>
+</suite>
+<status status="PASS" start="2025-08-06T12:45:39.747091" elapsed="8.294647"/>
+</suite>
+<status status="PASS" start="2025-08-06T12:45:39.743046" elapsed="8.303114"/>
+</suite>
+<status status="PASS" start="2025-08-06T12:45:39.692118" elapsed="8.356059"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RobotFramework RIDE" id="s1" pass="1" fail="0" skip="0">RobotFramework RIDE</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">RobotFramework RIDE.Tests</stat>
+<stat name="Sprint1" id="s1-s1-s1" pass="1" fail="0" skip="0">RobotFramework RIDE.Tests.Sprint1</stat>
+<stat name="MyFirstRFProject" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">RobotFramework RIDE.Tests.Sprint1.MyFirstRFProject</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
