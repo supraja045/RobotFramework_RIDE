@@ -29,6 +29,7 @@ POST
             .
 
 POST1
+    [Tags]    post1
     ${headers}    Create Dictionary    content-type=application/json
     # ${AUTH}    Create Dictionary    auth=abc123
     Create Session    api1    https://petstore.swagger.io/    headers=${headers}
