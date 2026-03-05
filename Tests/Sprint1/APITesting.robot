@@ -11,9 +11,9 @@ GET
     [Tags]    get
     ${headers}    Create Dictionary    content-type=application/json
     Create Session    api1    ${baseUrl}    headers=${headers}
-    ${response}    GET On Session    api1    /v2/pet/765109
+    ${response}    GET On Session    api1    /v2/pet/170190
     ${id}    JSONLibrary.Get Value From Json    ${response.json()}    $..id
-    Should Be Equal As Strings    ${id}[0]    765109
+    Should Be Equal As Strings    ${id}[0]    170190
 
 POST
     [Tags]    post
