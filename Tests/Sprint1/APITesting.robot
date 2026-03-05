@@ -11,9 +11,8 @@ Library           OperatingSystem
 GET
     [Tags]    get
     ${headers}    Create Dictionary    content-type=application/json
-    ${BASE_URL}    Get Environment Variable    BASE_URL
     Log    ${BASE_URL}
-    Create Session    api1    \    headers=${headers}
+    Create Session    api1    ${BASE_URL}    headers=${headers}
     ${response}    GET On Session    api1    /v2/pet/170190
     ${id}    JSONLibrary.Get Value From Json    ${response.json()}    $..id
     Should Be Equal As Strings    ${id}[0]    170190
