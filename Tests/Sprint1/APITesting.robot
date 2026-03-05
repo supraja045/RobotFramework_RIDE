@@ -26,7 +26,6 @@ POST
     ${id}    JSONLibrary.Get Value From Json    ${response.json()}    $..id
     ${response}    GET On Session    api1    /v2/pet/${id}[0]
     Log To Console    ${response.json()}
-            .
 
 POST1
     [Tags]    post1
