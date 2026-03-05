@@ -8,6 +8,7 @@ Library           JSONLibrary
 
 *** Test Cases ***
 GET
+    [Tags]    get
     ${headers}    Create Dictionary    content-type=application/json
     Create Session    api1    ${baseUrl}    headers=${headers}
     ${response}    GET On Session    api1    /v2/pet/765109
