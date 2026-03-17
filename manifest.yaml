@@ -1,0 +1,16 @@
+app:
+  name: robot-framework-tests
+  environment: qa
+
+execution:
+  browser: chrome
+  base_url: https://www.leafground.com/dashboard.xhtml
+
+tests:
+  tag: title
+  path: Tests/
+  report_dir: Log/
+
+python:
+  version: 3.10
+  robot_command: python -m robot
