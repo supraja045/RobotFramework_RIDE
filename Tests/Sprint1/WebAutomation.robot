@@ -7,11 +7,12 @@ Library           Collections
 Library           CSVLibrary
 Library           String
 Resource          ../SupportFiles/SupportSteps.robot
+Library           ImageHorizonLibrary    reference_folder=${EXECDIR}/Data
 
 *** Test Cases ***
 Title
     [Tags]    title
-    Open Browser    https://www.leafground.com/dashboard.xhtml    chrome
+    Open Browser    https://www.leafground.com/dashboard.xhtml    options=add_argument("--headless");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--window-size=1920,1080")
     Wait Until Page Contains    Dashboard
     Title Should Be    Dashboard
 
@@ -110,3 +111,37 @@ FileUpload
     Click Element    //*[@id="j_idt93:j_idt95"]
     sleep    5s
     Wait Until Keyword Succeeds    1m    5s    File Should Exist    C:\\Users\\supra\\Downloads\\TestLeaf Logo(1).png
+
+DropdownSorting
+    Open Browser    https://www.leafground.com/select.xhtml    chrome
+    Maximize Browser Window
+    Set Selenium Implicit Wait    10s
+    Element Should Be Visible    //*[@id="j_idt87:country_input"]/preceding::select
+    ${items}    Get List Items    //*[@id="j_idt87:country_input"]/preceding::select
+    ${copy}    Copy List    ${items}
+    Sort List    ${copy}
+    Sort List    ${items}
+    Remove Values From List    ${copy}    Select Tool
+    Remove Values From List    ${items}    Select Tool
+    Should Be Equal    ${items}    ${copy}
+    #Finding Duplicates
+    ${unique}    Remove Duplicates    ${items}
+    Should Be Equal    ${items}    ${unique}
+    Select From List By Label    //*[@id="j_idt87:country_input"]/preceding::select    Selenium
+    sleep    5s
+
+ImageTesting
+    Open Browser    https://www.leafground.com/charts.xhtml    chrome
+    Maximize Browser Window
+    Wait Until Page Contains    id=j_idt89_canvas    2m
+    Element Should Be Visible    id=j_idt89_canvas
+    Capture element screenshot    id=j_idt89_canvas    chart_screenshot.png
+    Wait For    chart_screenshot.png
+    Click Image    chart_screenshot.png
+
+FileHandling
+    ${contents}    Get File    D:\\Professional\\Learning\\My Learnings\\Scenario Based\\FileWriting.txt
+    ${lineCount}    Get Line Count    ${contents}
+    FOR    ${i}    IN RANGE    2
+        ${line}    Get Line    ${contents}    ${i}
+    END
